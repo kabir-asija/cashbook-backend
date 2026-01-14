@@ -12,6 +12,10 @@ const PORT = process.env.PORT || 5001;
 app.use(rateLimiter)
 app.use(express.json());
 
+app.get("/",(req,res)=>{
+  res.send("API working! ✨")
+})
+
 app.use("/api/transactions",transactionRoutes)
 
 initDB().then(() => {
